@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gihan Benaragama | Software Engineer Portfolio</title>
+  <meta name="description"
+    content="Professional portfolio of Gihan Benaragama, Software Engineering undergraduate at SLIIT specializing in MERN full-stack development and automated testing.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="container">
+      <a href="#home" class="logo">
+        <span class="logo-accent">&lt;</span>Gihan Benaragama<span class="logo-accent">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="Gihan_Benaragama.pdf" download="Gihan_Benaragama_Resume.pdf" class="btn btn-nav">
+          <span>Download CV</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+        </a>
+      </div>
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero section-padding">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="status-badge">
+            <span class="pulse-dot"></span>
+            <span>Available for new opportunities</span>
+          </div>
+          <h1 class="hero-title">
+            Hi, I'm <span class="highlight-text">Gihan Benaragama</span>
+          </h1>
+          <h2 class="hero-subtitle">
+            <span class="typing-text"
+              data-words='["Software Engineering Undergraduate", "Full-Stack Web Developer", "MERN Stack Specialist", "Automation QA Enthusiast"]'></span><span
+              class="cursor-blink">|</span>
+          </h2>
+          <p class="hero-description">
+            Software Engineering undergraduate at SLIIT with hands-on experience building full-stack web applications
+            using the MERN stack (MongoDB, Express.js, React, Node.js). Passionate about design patterns, microservices
+            architecture, and automated test coverage.
+          </p>
+          <div class="hero-ctas">
+            <a href="#projects" class="btn btn-primary">
+              <span>View Projects</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="Gihan_Benaragama.pdf" download="Gihan_Benaragama_Resume.pdf" class="btn btn-secondary">
+              <span>Get Resume</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+          <div class="social-links-hero">
+            <a href="https://www.linkedin.com/in/gihan-benaragama/" target="_blank" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </a>
+            <a href="https://github.com/Gihan-Benaragama" target="_blank" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.04-.01-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.29 0 .32.21.69.82.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12" />
+              </svg>
+            </a>
+            <a href="https://dev.to/gihan_benaragama" target="_blank" aria-label="Dev.to Blog">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                <path
+                  d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H6l.02 2.44.04 2.45.56-.02c.41 0 .63-.07.83-.26.24-.24.26-.36.26-2.2 0-1.91-.02-1.96-.29-2.18zM0 4.94v14.12h24V4.94H0zM8.56 15.3c-.44.58-1.06.77-2.53.77H4.71V8.53h1.4c1.67 0 2.16.18 2.6.9.27.43.29.6.32 2.57.05 2.23-.02 2.73-.47 3.3zm5.09-5.47h-2.47v1.77h1.52v1.28l-.72.04-.75.03v1.77l1.22.03 1.2.04v1.28h-1.6c-1.53 0-1.6-.01-1.87-.3l-.3-.28v-3.16c0-3.02.01-3.18.25-3.48.23-.31.25-.31 1.88-.31h1.64v1.29zm4.68 5.45c-.17.43-.64.79-1 .79-.18 0-.45-.15-.67-.39-.32-.32-.45-.63-.82-2.08l-.9-3.39-.45-1.67h.76c.4 0 .75.02.75.05 0 .06 1.16 4.54 1.26 4.83.04.15.32-.7.73-2.3l.66-2.52.74-.04c.4-.02.73 0 .73.04 0 .14-1.67 6.38-1.8 6.68z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="profile-card">
+            <div class="profile-img-wrap">
+              <img src="gihan.jpg" alt="Gihan Benaragama" class="profile-img">
+            </div>
+            <div class="profile-card-border"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about section-padding sec-alt">
+      <div class="container">
+        <div class="section-header center">
+          <h2 class="section-title">About Me</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-bio">
+            <h3>Who I Am</h3>
+            <p>
+              I am a Software Engineering undergraduate at the Sri Lanka Institute of Information Technology (SLIIT). I
+              specialize in designing and engineering full-stack web applications and microservices using modern web
+              technologies.
+            </p>
+            <p>
+              My expertise includes designing robust RESTful APIs, securing applications using JWT-based role
+              authorization, and creating responsive frontends. Additionally, I have strong experience in E2E automated
+              test pipelines using Playwright and Selenium WebDriver to enforce code quality and reliability.
+            </p>
+            <p>
+              Beyond technical skills, my years of discipline as a Karate-Do practitioner have taught me the values of
+              persistent practice, focus, and attention to detail—traits that I actively apply to software architecture,
+              clean coding, and problem-solving.
+            </p>
+          </div>
+
+          <div class="about-info">
+            <h3>Quick Details</h3>
+            <div class="info-grid">
+              <div class="info-fact">
+                <span class="info-label">University</span>
+                <span class="info-val">SLIIT (Sri Lanka)</span>
+              </div>
+              <div class="info-fact">
+                <span class="info-label">Degree Focus</span>
+                <span class="info-val">B.Sc. (Hons) Software Engineering</span>
+              </div>
+              <div class="info-fact">
+                <span class="info-label">Availability</span>
+                <span class="info-val">Internship candidate (2026)</span>
+              </div>
+              <div class="info-fact">
+                <span class="info-label">Core Tech</span>
+                <span class="info-val">MERN Stack, Microservices, Playwright</span>
+              </div>
+              <div class="info-fact">
+                <span class="info-label">Martial Arts</span>
+                <span class="info-val">Karate-Do Practitioner (SLKF)</span>
+              </div>
+              <div class="info-fact">
+                <span class="info-label">Location</span>
+                <span class="info-val">Eheliyagoda, Sri Lanka</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS SECTION -->
+    <section id="skills" class="skills section-padding">
+      <div class="container">
+        <div class="section-header center">
+          <h2 class="section-title">My Tech Stack</h2>
+          <p class="section-desc">A comprehensive list of programming languages, web technologies, and database
+            architectures I work with.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Card 1: Languages -->
+          <div class="skills-category-card">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3>Languages</h3>
+            </div>
+            <div class="skills-list">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">JavaScript (ES6+)</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">C/C++</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Web & Frameworks -->
+          <div class="skills-category-card">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h3>Web & MERN Stack</h3>
+            </div>
+            <div class="skills-list">
+              <span class="skill-tag">HTML5 / CSS3</span>
+              <span class="skill-tag">React.js</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Express.js</span>
+              <span class="skill-tag">Tailwind CSS</span>
+              <span class="skill-tag">Vite</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Databases -->
+          <div class="skills-category-card">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                  <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path>
+                </svg>
+              </div>
+              <h3>Databases</h3>
+            </div>
+            <div class="skills-list">
+              <span class="skill-tag font-accent">MongoDB</span>
+              <span class="skill-tag font-accent">MySQL</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Testing & Automation -->
+          <div class="skills-category-card">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <h3>Testing & QA</h3>
+            </div>
+            <div class="skills-list">
+              <span class="skill-tag font-accent">Playwright </span>
+              <span class="skill-tag font-accent">Selenium WebDriver</span>
+              <span class="skill-tag">Cross-Browser Testing</span>
+              <span class="skill-tag">E2E Flow Automation</span>
+            </div>
+          </div>
+
+          <!-- Card 5: Architecture & Security -->
+          <div class="skills-category-card">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+              <h3>Architecture & Security</h3>
+            </div>
+            <div class="skills-list">
+              <span class="skill-tag font-accent">RESTful API Design</span>
+              <span class="skill-tag font-accent">Microservices</span>
+              <span class="skill-tag font-accent">JWT Authentication</span>
+              <span class="skill-tag">MVC Architecture</span>
+            </div>
+          </div>
+
+          <!-- Card 6: Tools & Operating Systems -->
+          <div class="skills-category-card">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z">
+                  </path>
+                </svg>
+              </div>
+              <h3>Tools & Environments</h3>
+            </div>
+            <div class="skills-list">
+              <span class="skill-tag">Git / GitHub</span>
+              <span class="skill-tag">VS Code / Postman</span>
+              <span class="skill-tag">RStudio / Eclipse</span>
+              <span class="skill-tag">Linux / Windows</span>
+              <span class="skill-tag">Agile / Scrum</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects section-padding sec-alt">
+      <div class="container">
+        <div class="section-header center">
+          <h2 class="section-title">Projects</h2>
+          <p class="section-desc">Detailed summaries of full-stack engineering and QA testing suites I have built.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- 1. SkyCast -->
+          <div class="project-card">
+            <div class="project-thumbnail">
+              <img src="images/skycast.png" alt="SkyCast Weather Dashboard screenshot" loading="lazy">
+              <div class="thumb-overlay"><span>SkyCast</span></div>
+            </div>
+            <div class="project-header">
+              <span class="project-type">Individual Project</span>
+              <span class="project-badge bg-primary-glow">Featured</span>
+            </div>
+            <h3 class="project-title">SkyCast – Real-Time Cinematic Weather Dashboard</h3>
+            <p class="project-intro-text">
+              A cinematic weather platform featuring real-time conditions, forecasts, air quality insights, and
+              historical weather exploration. Built with a custom animation engine that synchronizes dynamic weather
+              effects with live atmospheric data for an immersive user experience.
+            </p>
+            <ul class="project-bullets">
+              <li>Developed a real-time weather dashboard featuring GPS-based location detection, global city search,
+                and live weather updates powered by the OpenWeatherMap API.</li>
+              <li>Engineered dynamic weather visualizations using the HTML5 Canvas API, rendering animated rain, storms,
+                lightning, clouds, and wind effects based on current conditions.</li>
+              <li>Built interactive analytics including 24-hour forecasts, 7-day outlooks, AQI monitoring, precipitation
+                charts, and sunrise/sunset visualizations using Recharts.</li>
+              <li>Integrated Leaflet and React-Leaflet to create an interactive weather map with live city markers and
+                overlays for precipitation, temperature, wind, and cloud coverage.</li>
+              <li>Implemented multi-city weather comparison for major Sri Lankan cities, enabling side-by-side real-time
+                metric analysis.</li>
+              <li>Designed a fully responsive glassmorphism UI with Framer Motion animations, optimized for desktop,
+                tablet, and mobile devices.</li>
+            </ul>
+            <button class="project-details-btn">View Details &rarr;</button>
+            <div class="project-tags">
+              <span data-tech="React">React</span>
+              <span data-tech="Vite">Vite</span>
+              <span data-tech="JavaScript">JavaScript</span>
+              <span data-tech="Axios">Axios</span>
+              <span data-tech="OpenWeatherMap">OpenWeatherMap API</span>
+              <span data-tech="Leaflet">Leaflet</span>
+              <span data-tech="Recharts">Recharts</span>
+              <span data-tech="FramerMotion">Framer Motion</span>
+              <span data-tech="Canvas">HTML5 Canvas</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Gihan-Benaragama/WeatherSkyCast" target="_blank" class="project-link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.04-.01-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.29 0 .32.21.69.82.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12" />
+                </svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://lnkd.in/g_dpz5Ka" target="_blank" class="project-link">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                  </path>
+                </svg>
+                <span>Live Demo</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 2. Expenses Tracker -->
+          <div class="project-card">
+            <div class="project-thumbnail">
+              <img src="images/expensex.png" alt="Expenses Tracker screenshot" loading="lazy">
+              <div class="thumb-overlay"><span>Expenses Tracker</span></div>
+            </div>
+            <div class="project-header">
+              <span class="project-type">Individual Project</span>
+              <span class="project-badge bg-primary-glow">Featured</span>
+            </div>
+            <h3 class="project-title">Expenses Tracker</h3>
+            <p class="project-intro-text">
+              A full-stack personal finance dashboard that enables secure expense and income management with interactive
+              analytics and spending insights. Features advanced data visualization, financial reporting, and
+              streamlined transaction tracking.
+            </p>
+            <ul class="project-bullets">
+              <li>Developed a full-stack expense tracking application with Google OAuth 2.0 authentication and JWT-based
+                session management for secure, stateless API communication.</li>
+              <li>Engineered a custom React hook (<code>useExpenses</code>) encapsulating all CRUD operations, data
+                fetching, filtering, and aggregation logic across expenses and incomes.</li>
+              <li>Built 6 interactive financial charts (area, line, bar, pie) using Recharts to visualize spending
+                trends, income comparisons, category breakdowns, and cumulative balance.</li>
+              <li>Designed and deployed a REST API on Render with Express/MongoDB/Mongoose handling user, expense, and
+                income collections across a clean MVC architecture.</li>
+            </ul>
+            <button class="project-details-btn">View Details &rarr;</button>
+            <div class="project-tags">
+              <span data-tech="React">React</span>
+              <span data-tech="Node.js">Node.js</span>
+              <span data-tech="Express">Express</span>
+              <span data-tech="MongoDB">MongoDB</span>
+              <span data-tech="Google OAuth">Google OAuth</span>
+              <span data-tech="Recharts">Recharts</span>
+              <span data-tech="Render">Render</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Gihan-Benaragama/syntecxhub-expenses_tracker" target="_blank" class="project-link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.04-.01-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.29 0 .32.21.69.82.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12" />
+                </svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://lnkd.in/g_dpz5Ka" target="_blank" class="project-link">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                  </path>
+                </svg>
+                <span>Live Demo</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 3. AquaShield -->
+          <div class="project-card">
+            <div class="project-thumbnail">
+              <img src="images/aquashield.png" alt="AquaShield Illegal Fishing Reporter screenshot" loading="lazy">
+              <div class="thumb-overlay"><span>AquaShield</span></div>
+            </div>
+            <div class="project-header">
+              <span class="project-type">Group Project</span>
+              <span class="project-badge bg-accent-glow">Eco-Tech</span>
+            </div>
+            <h3 class="project-title">AquaShield – Illegal Fishing</h3>
+            <p class="project-intro-text">
+              An environmental monitoring platform that empowers communities to report illegal fishing activities and
+              track aquatic species across multiple regions. Includes species management, validation workflows, and
+              tools that improve reporting accuracy and conservation efforts.
+            </p>
+            <ul class="project-bullets">
+              <li>Assembled a full-stack web application enabling users to report illegal fishing and monitor aquatic
+                species across multiple regions.</li>
+              <li>Created a Species Management admin panel with CRUD operations and data-integrity validation for 20+
+                aquatic species.</li>
+              <li>Implemented a fish species identification feature to aid public users in accurate, real-time species
+                recognition.</li>
+            </ul>
+            <button class="project-details-btn">View Details &rarr;</button>
+            <div class="project-tags">
+              <span data-tech="Node.js">Node.js</span>
+              <span data-tech="Express">Express</span>
+              <span data-tech="MongoDB">MongoDB</span>
+              <span data-tech="React">React</span>
+              <span>Tailwind CSS</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/NethsaraShyamika/AquaShield" target="_blank" class="project-link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.04-.01-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.29 0 .32.21.69.82.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12" />
+                </svg>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 4. Online Fitness Store -->
+          <div class="project-card">
+            <div class="project-thumbnail">
+              <img src="images/fitnessstore.png" alt="Online Fitness Store screenshot" loading="lazy">
+              <div class="thumb-overlay"><span>Fitness Store</span></div>
+            </div>
+            <div class="project-header">
+              <span class="project-type">Individual Project</span>
+              <span class="project-badge bg-primary-glow">E-Commerce</span>
+            </div>
+            <h3 class="project-title">Online Fitness Store</h3>
+            <p class="project-intro-text">
+              A complete e-commerce platform for browsing fitness products, managing shopping carts, and completing
+              purchases through a seamless shopping experience. Includes secure user authentication, product discovery
+              features, and responsive cross-device support.
+            </p>
+            <ul class="project-bullets">
+              <li>Launched a fully functional e-commerce platform featuring 50+ fitness products, JWT auth, product
+                catalogue, search & filtering, shopping cart, and checkout workflow.</li>
+              <li>Crafted a responsive, mobile-first UI ensuring a seamless experience across all screen sizes and
+                devices.</li>
+              <li>Deployed to Vercel with continuous delivery, enabling a live, publicly accessible, zero-downtime
+                production environment.</li>
+            </ul>
+            <button class="project-details-btn">View Details &rarr;</button>
+            <div class="project-tags">
+              <span data-tech="MongoDB">MongoDB</span>
+              <span data-tech="Express">Express.js</span>
+              <span data-tech="React">React</span>
+              <span data-tech="Node.js">Node.js</span>
+              <span>JWT</span>
+              <span>Vercel</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Gihan-Benaragama/Fitness-store" target="_blank" class="project-link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.04-.01-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.29 0 .32.21.69.82.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12" />
+                </svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://lnkd.in/dY-3Jy5W" target="_blank" class="project-link">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                  </path>
+                </svg>
+                <span>Live Demo</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 5. CareLink -->
+          <div class="project-card">
+            <div class="project-thumbnail">
+              <img src="images/carelink.png" alt="CareLink Healthcare Platform screenshot" loading="lazy">
+              <div class="thumb-overlay"><span>CareLink</span></div>
+            </div>
+            <div class="project-header">
+              <span class="project-type">Group Project</span>
+              <span class="project-badge bg-accent-glow">Microservices</span>
+            </div>
+            <h3 class="project-title">CareLink – Healthcare Platform</h3>
+            <p class="project-intro-text">
+              A scalable healthcare management platform built around secure patient record management, role-based access
+              control, and service-oriented architecture. Designed to support efficient healthcare workflows while
+              maintaining data integrity and security.
+            </p>
+            <ul class="project-bullets">
+              <li>Architected an auth-service with JWT-based authentication, secure login, registration, and role-based
+                access control for 3+ user roles.</li>
+              <li>Constructed a patient-service module with full CRUD operations managing sensitive patient records with
+                data-security best practices.</li>
+              <li>Designed and delivered 10+ RESTful APIs across a microservices architecture ensuring scalability,
+                separation of concerns, and data integrity.</li>
+            </ul>
+            <button class="project-details-btn">View Details &rarr;</button>
+            <div class="project-tags">
+              <span data-tech="Node.js">Node.js</span>
+              <span data-tech="Express">Express.js</span>
+              <span data-tech="React">React</span>
+              <span data-tech="MongoDB">MongoDB</span>
+              <span>JWT</span>
+              <span>Microservices</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/NethsaraShyamika/CareLink" target="_blank" class="project-link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.04-.01-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.29 0 .32.21.69.82.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12" />
+                </svg>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 6. Computer Online Shop -->
+          <div class="project-card">
+            <div class="project-thumbnail">
+              <img src="images/techstore.png" alt="Computer Equipment Online Shop screenshot" loading="lazy">
+              <div class="thumb-overlay"><span>Tech Store</span></div>
+            </div>
+            <div class="project-header">
+              <span class="project-type">Individual Project</span>
+              <span class="project-badge bg-primary-glow">E-Commerce</span>
+            </div>
+            <h3 class="project-title">Computer Equipment Online Shop</h3>
+            <p class="project-intro-text">
+              A full-featured online marketplace for computer hardware and accessories with secure user accounts, cart
+              management, order tracking, and an intuitive shopping experience.
+            </p>
+            <ul class="project-bullets">
+              <li>Built a complete e-commerce web application with product browsing, cart management, order history, and
+                secure JWT authentication.</li>
+              <li>Published to Vercel with live, publicly accessible product demos and a continuous deployment pipeline.
+              </li>
+            </ul>
+            <button class="project-details-btn">View Details &rarr;</button>
+            <div class="project-tags">
+              <span data-tech="MongoDB">MongoDB</span>
+              <span data-tech="Express">Express.js</span>
+              <span data-tech="React">React</span>
+              <span data-tech="Node.js">Node.js</span>
+              <span>JWT</span>
+              <span>Vercel</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Gihan-Benaragama/techstock" target="_blank" class="project-link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.04-.01-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.29 0 .32.21.69.82.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12" />
+                </svg>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 7. Hospital Management System -->
+          <div class="project-card">
+            <div class="project-thumbnail">
+              <img src="images/hospitalmanagement.png" alt="Hospital Management System screenshot" loading="lazy">
+              <div class="thumb-overlay"><span>Hospital Management</span></div>
+            </div>
+            <div class="project-header">
+              <span class="project-type">Group Project</span>
+              <span class="project-badge bg-primary-glow">Full-Stack</span>
+            </div>
+            <h3 class="project-title">Hospital Management System</h3>
+            <p class="project-intro-text">
+              A comprehensive hospital operations platform that streamlines patient management, appointment scheduling, staff coordination, and administrative workflows through a centralized digital system.
+            </p>
+            <ul class="project-bullets">
+              <li>Built a full-stack application overseeing hospital operations — patient records, staff scheduling, and
+                appointments — across multiple departments.</li>
+              <li>Executed a complete appointment management module (CRUD) with full form validation, error handling,
+                and real-time status updates.</li>
+              <li>Integrated 5+ frontend interfaces with backend APIs for seamless, responsive interaction across all
+                modules.</li>
+            </ul>
+            <button class="project-details-btn">View Details &rarr;</button>
+            <div class="project-tags">
+              <span data-tech="React">React</span>
+              <span>Vite</span>
+              <span>Tailwind CSS</span>
+              <span data-tech="Node.js">Node.js</span>
+              <span data-tech="Express">Express</span>
+              <span data-tech="MongoDB">MongoDB</span>
+              <span>JWT</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/shashenAmalka/Hospital-Management-System" target="_blank" class="project-link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.04-.01-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.29 0 .32.21.69.82.57C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12" />
+                </svg>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section id="journey" class="journey section-padding">
+      <div class="container">
+        <div class="section-header center">
+          <h2 class="section-title">Education & Journey</h2>
+          <p class="section-desc">Timeline of my studies at SLIIT, engineering certifications, and extracurricular
+            practice.</p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-bar"></div>
+
+          <!-- Edu Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date">2023 – Present</div>
+            <div class="timeline-content">
+              <span class="timeline-label">Degree</span>
+              <h3>B.Sc. (Hons) in Software Engineering</h3>
+              <h4 class="timeline-sub">Sri Lanka Institute of Information Technology (SLIIT)</h4>
+              <p>Key academic modules cover Object-Oriented Programming (OOP), Data Structures & Algorithms, Database
+                Management Systems (DBMS), and Web & Full-Stack Development.</p>
+            </div>
+          </div>
+
+          <!-- Edu Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date">SLIIT</div>
+            <div class="timeline-content">
+              <span class="timeline-label">Academic</span>
+              <h3>Higher Diploma in Information Technology</h3>
+              <h4 class="timeline-sub">Sri Lanka Institute of Information Technology (SLIIT)</h4>
+              <p>Earned higher diploma credentials, laying the core software engineering base and building foundational
+                scripting and database skills.</p>
+            </div>
+          </div>
+
+          <!-- Cert 1 -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date">Skyrek Institute</div>
+            <div class="timeline-content">
+              <span class="timeline-label">Certification</span>
+              <h3>MERN Full Stack Development</h3>
+              <h4 class="timeline-sub">Skyrek Institute Course</h4>
+              <p>Completed practical full-stack deployment training focusing on MongoDB, Express, React, and Node.js.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cert 2 -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date">University of Moratuwa</div>
+            <div class="timeline-content">
+              <span class="timeline-label">Certification</span>
+              <h3>Python Programming – Full Stack Developer</h3>
+              <h4 class="timeline-sub">University of Moratuwa Program</h4>
+              <p>Studied Python OOP structures, data scraping, scripting logic, and file manipulation patterns.</p>
+            </div>
+          </div>
+
+          <!-- Cert 3 -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date">University of Moratuwa</div>
+            <div class="timeline-content">
+              <span class="timeline-label">Certification</span>
+              <h3>Web Design for Beginners</h3>
+              <h4 class="timeline-sub">University of Moratuwa Program</h4>
+              <p>Acquired UI design best practices, custom CSS grids, responsiveness, and web design fundamentals.</p>
+            </div>
+          </div>
+
+          <!-- English Cert -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date">E-soft Metro College</div>
+            <div class="timeline-content">
+              <span class="timeline-label">Certification</span>
+              <h3>Diploma in English</h3>
+              <h4 class="timeline-sub">E-soft Metro College</h4>
+              <p>Completed verbal and written communication classes to ensure professional cooperation and writing
+                capability.</p>
+            </div>
+          </div>
+
+          <!-- Extracurricular -->
+          <div class="timeline-item karate-highlight">
+            <div class="timeline-marker-karate">🥋</div>
+            <div class="timeline-date">2015 – Present</div>
+            <div class="timeline-content">
+              <span class="timeline-label label-karate">Extracurricular</span>
+              <h3>Karate-Do Practitioner</h3>
+              <h4 class="timeline-sub sub-karate">Sri Lanka Karate-Do Federation</h4>
+              <p>Shotokan Karate-Do practitioner affiliated with WKF (World Karate Federation), AKF, and the National
+                Olympic Committee of Sri Lanka.</p>
+              <div class="karate-badges">
+                <span class="k-badge">Ratnapura District Karate Championship (Under-13 Boys Kata) Competitor</span>
+                <span class="k-badge">Certificate of Merit – Sabaragamuwa Province Technical Skills Review</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact section-padding sec-alt">
+      <div class="container">
+        <div class="section-header center">
+          <h2 class="section-title">Contact Me</h2>
+          <p class="section-desc">Have an opportunity or a question? Drop a message below, and I will get back to you
+            promptly.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Connection info -->
+          <div class="contact-info">
+            <h3>Connect Directly</h3>
+            <p>I am available for full-stack and quality assurance internship roles in Sri Lanka or remote work
+              environments.</p>
+
+            <div class="contact-methods">
+              <div class="c-method">
+                <div class="c-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,12 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="c-details">
+                  <span class="c-label">Email</span>
+                  <a href="mailto:gihanbenaragama@gmail.com" class="c-val">gihanbenaragama@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="c-method">
+                <div class="c-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 9.8 19.79 19.79 0 0 1 .22 1.18 2 2 0 0 1 2.22 0h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L6.91 7.09a16 16 0 0 0 6 6l.62-.62a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 14.92v2z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="c-details">
+                  <span class="c-label">Phone</span>
+                  <a href="tel:+94760748642" class="c-val">+94 76 074 8642</a>
+                </div>
+              </div>
+
+              <div class="c-method">
+                <div class="c-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="c-details">
+                  <span class="c-label">Location</span>
+                  <span class="c-val text-white">Eheliyagoda, Ratnapura, Sri Lanka</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Message Form -->
+          <div class="contact-form-wrap">
+            <form id="contact-form" class="c-form">
+              <div class="form-row">
+                <div class="form-item">
+                  <label for="f-name">Your Name</label>
+                  <input type="text" id="f-name" required placeholder="Gihan Perera">
+                </div>
+                <div class="form-item">
+                  <label for="f-email">Email Address</label>
+                  <input type="email" id="f-email" required placeholder="name@company.com">
+                </div>
+              </div>
+              <div class="form-item">
+                <label for="f-subject">Subject</label>
+                <input type="text" id="f-subject" required placeholder="Internship Opportunity">
+              </div>
+              <div class="form-item">
+                <label for="f-message">Message Details</label>
+                <textarea id="f-message" required rows="5" placeholder="Write your message here..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary form-submit-btn">
+                <span>Send Message</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+            <div id="form-status" class="alert-box"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="f-copyright">
+        <p>&copy; 2026 Gihan Benaragama. All rights reserved.</p>
+        <p class="f-loc">Ratnapura, Sri Lanka 🇱🇰</p>
+      </div>
+      <div class="f-links">
+        <p>Built with clean HTML · CSS · JS</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Modal Popup -->
+  <div id="project-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-body">
+        <!-- Content injected dynamically via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+
+</html>
