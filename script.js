@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initTyping();
   initScrollReveal();
+  initActiveNav();
+  initAnimations();
   initContactForm();
 });
 
@@ -118,36 +120,42 @@ function initTyping() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   4. SCROLL REVEAL — IntersectionObserver
+   4. SCROLL REVEAL — IntersectionObserver with direction variants
    ═══════════════════════════════════════════════════════════ */
 function initScrollReveal() {
-  // Tag elements
-  const targets = [
-    '.section-label',
-    '.section-h2',
-    '.about-lead',
-    '.about-text',
-    '.about-facts',
-    '.skill-group',
-    '.project-item',
-    '.tl-item',
-    '.contact-left',
-    '.contact-right',
-    '.hero-text',
-    '.hero-image-col',
+  // Elements that slide up (default)
+  const upSelectors = [
+    '.section-label', '.section-h2',
+    '.about-lead', '.about-text', '.about-facts',
+    '.skill-group', '.project-item', '.tl-item',
   ];
 
-  targets.forEach(selector => {
-    document.querySelectorAll(selector).forEach((el, i) => {
-      if (!el.classList.contains('reveal-item')) {
+  // Elements that slide in from the left
+  const leftSelectors = ['.about-heading-col', '.contact-left'];
+
+  // Elements that slide in from the right
+  const rightSelectors = ['.about-body-col', '.contact-right'];
+
+  // Elements that scale in
+  const scaleSelectors = ['.hero-stat-card', '.ticker-wrap'];
+
+  function tag(selectors, extraClass) {
+    selectors.forEach(selector => {
+      document.querySelectorAll(selector).forEach((el, i) => {
         el.classList.add('reveal-item');
-      }
-      // Stagger children in grids
-      if (['skill-group', 'project-item', 'tl-item'].some(c => el.classList.contains(c))) {
-        el.style.transitionDelay = `${(i % 4) * 0.08}s`;
-      }
+        if (extraClass) el.classList.add(extraClass);
+        // Grid stagger — override transition-delay for staggered siblings
+        if (['skill-group', 'project-item', 'tl-item'].some(c => el.classList.contains(c))) {
+          el.style.transitionDelay = `${(i % 6) * 0.09}s`;
+        }
+      });
     });
-  });
+  }
+
+  tag(upSelectors, null);
+  tag(leftSelectors, 'from-left');
+  tag(rightSelectors, 'from-right');
+  tag(scaleSelectors, 'scale-in');
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -156,7 +164,7 @@ function initScrollReveal() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  }, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
 
   document.querySelectorAll('.reveal-item').forEach(el => observer.observe(el));
 }
@@ -203,4 +211,80 @@ function initContactForm() {
     status.className = `form-status ${type}`;
     setTimeout(() => { status.className = 'form-status'; }, 7000);
   }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   6. ACTIVE NAV — highlight current section link
+   ═══════════════════════════════════════════════════════════ */
+function initActiveNav() {
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.toggle(
+            'active',
+            link.getAttribute('href') === `#${id}`
+          );
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(s => sectionObserver.observe(s));
+}
+
+/* ═══════════════════════════════════════════════════════════
+   7. EXTRA ANIMATIONS — parallax tilt + page-load class
+   ═══════════════════════════════════════════════════════════ */
+function initAnimations() {
+  // Hero image — subtle mouse parallax tilt
+  const frame = document.querySelector('.hero-img-frame');
+  const heroCol = document.querySelector('.hero-image-col');
+
+  if (frame && heroCol) {
+    heroCol.addEventListener('mousemove', e => {
+      const rect = heroCol.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width  - 0.5) * 10;
+      const y = ((e.clientY - rect.top)  / rect.height - 0.5) * -8;
+      frame.style.transform = `perspective(800px) rotateY(${x}deg) rotateX(${y}deg)`;
+    }, { passive: true });
+
+    heroCol.addEventListener('mouseleave', () => {
+      frame.style.transform = '';
+    });
+  }
+
+  // Skill tags — staggered fade on hover inside group
+  document.querySelectorAll('.skill-group').forEach(group => {
+    const tags = group.querySelectorAll('.skill-tags span');
+    group.addEventListener('mouseenter', () => {
+      tags.forEach((tag, i) => {
+        tag.style.transition = `all 0.2s ease ${i * 0.04}s`;
+        tag.style.color = 'var(--paper)';
+        tag.style.borderColor = 'var(--border-2)';
+      });
+    });
+    group.addEventListener('mouseleave', () => {
+      tags.forEach(tag => {
+        tag.style.color = '';
+        tag.style.borderColor = '';
+      });
+    });
+  });
+
+  // Project image — reveal overlay on hover
+  document.querySelectorAll('.project-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const frame = item.querySelector('.project-img-frame');
+      if (frame) frame.style.transform = 'scale(1.02)';
+    });
+    item.addEventListener('mouseleave', () => {
+      const frame = item.querySelector('.project-img-frame');
+      if (frame) frame.style.transform = '';
+    });
+  });
 }

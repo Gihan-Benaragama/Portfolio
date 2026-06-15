@@ -1510,3 +1510,238 @@ footer {
     padding: 2.5rem 0;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   KEYFRAMES
+   ═══════════════════════════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes ping {
+  0%   { box-shadow: 0 0 0 0 rgba(245,166,35,0.7); }
+  70%  { box-shadow: 0 0 0 10px rgba(245,166,35,0); }
+  100% { box-shadow: 0 0 0 0 rgba(245,166,35,0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes shimmer {
+  from { background-position: -200% center; }
+  to   { background-position:  200% center; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes borderPulse {
+  0%, 100% { border-color: var(--border-2); }
+  50%       { border-color: rgba(245,166,35,0.4); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PAGE LOAD — Hero entrance (staggered, no scroll needed)
+   ═══════════════════════════════════════════════════════════ */
+.hero-eyebrow  { animation: fadeUp 0.7s var(--ease) 0.10s both; }
+.hero-name     { animation: fadeUp 0.8s var(--ease) 0.25s both; }
+.hero-role     { animation: fadeUp 0.7s var(--ease) 0.40s both; }
+.hero-bio      { animation: fadeUp 0.7s var(--ease) 0.52s both; }
+.hero-actions  { animation: fadeUp 0.7s var(--ease) 0.64s both; }
+.hero-socials  { animation: fadeUp 0.6s var(--ease) 0.76s both; }
+
+.hero-image-col {
+  animation: slideInRight 0.9s var(--ease) 0.30s both;
+}
+
+/* Stat cards float gently after entrance */
+.hero-stat-card {
+  animation: floatY 5s ease-in-out infinite;
+}
+.stat-2 { animation-delay: 2.5s; }
+
+/* ═══════════════════════════════════════════════════════════
+   SCROLL REVEAL — hidden state → visible state (JS adds .visible)
+   ═══════════════════════════════════════════════════════════ */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity   0.65s var(--ease),
+    transform 0.65s var(--ease);
+}
+
+.reveal-item.from-left  { transform: translateX(-36px); }
+.reveal-item.from-right { transform: translateX(36px); }
+.reveal-item.scale-in   { transform: scale(0.9); }
+
+.reveal-item.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger siblings inside grids */
+.reveal-item:nth-child(1) { transition-delay: 0.05s; }
+.reveal-item:nth-child(2) { transition-delay: 0.13s; }
+.reveal-item:nth-child(3) { transition-delay: 0.21s; }
+.reveal-item:nth-child(4) { transition-delay: 0.29s; }
+.reveal-item:nth-child(5) { transition-delay: 0.37s; }
+.reveal-item:nth-child(6) { transition-delay: 0.45s; }
+
+/* ═══════════════════════════════════════════════════════════
+   NAV LINK — animated underline on hover / active
+   ═══════════════════════════════════════════════════════════ */
+.nav-links a {
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--amber);
+  border-radius: 2px;
+  transition: width 0.25s var(--ease), left 0.25s var(--ease);
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 60%;
+  left: 20%;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION LABEL — dash grows on reveal
+   ═══════════════════════════════════════════════════════════ */
+.section-label::before {
+  width: 0;
+  transition: width 0.6s var(--ease) 0.15s;
+}
+.section-label.visible::before { width: 24px; }
+
+/* ═══════════════════════════════════════════════════════════
+   SKILL GROUP — hover lift
+   ═══════════════════════════════════════════════════════════ */
+.skill-group {
+  transition: background 0.25s, transform 0.3s var(--ease), box-shadow 0.3s;
+}
+.skill-group:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.35);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PROJECT ITEM — indent on hover (editorial feel)
+   ═══════════════════════════════════════════════════════════ */
+.project-item {
+  transition: padding 0.35s var(--ease);
+}
+.project-item:hover { padding-left: 1rem; padding-right: 1rem; }
+
+/* ═══════════════════════════════════════════════════════════
+   STAT CARD NUMBERS — amber shimmer
+   ═══════════════════════════════════════════════════════════ */
+.stat-num {
+  background: linear-gradient(
+    90deg,
+    var(--amber) 0%,
+    #ffda85     40%,
+    var(--amber) 60%,
+    var(--amber) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BUTTONS — inner shine sweep on hover
+   ═══════════════════════════════════════════════════════════ */
+.btn-primary,
+.btn-ghost {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after,
+.btn-ghost::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.12);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.btn-primary:hover::after,
+.btn-ghost:hover::after { transform: scaleX(1); }
+
+/* ═══════════════════════════════════════════════════════════
+   HERO IMAGE FRAME — breathing border
+   ═══════════════════════════════════════════════════════════ */
+.hero-img-frame {
+  animation: borderPulse 4s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CONTACT — field focus glow
+   ═══════════════════════════════════════════════════════════ */
+.cform-field input:focus,
+.cform-field textarea:focus {
+  outline: none;
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px rgba(245,166,35,0.15);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TIMELINE DOT — ripple on item hover
+   ═══════════════════════════════════════════════════════════ */
+.tl-item:hover .tl-dot {
+  animation: ping 1s ease-out 1;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   REDUCED MOTION — accessibility override
+   ═══════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
