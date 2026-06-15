@@ -1,83 +1,114 @@
-/* ============================================================
-   PORTFOLIO SCRIPT — GIHAN BENARAGAMA
-   ============================================================ */
+/* ═══════════════════════════════════════════════════════════
+   PORTFOLIO SCRIPT — GIHAN BENARAGAMA (Redesign)
+   ═══════════════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initCursor();
   initNav();
   initTyping();
   initScrollReveal();
   initContactForm();
-  initProjectModal();
 });
 
-/* ============================================================
-   1. NAVIGATION — sticky scroll + mobile toggle
-   ============================================================ */
-function initNav() {
-  const header = document.querySelector('header');
-  const toggle = document.querySelector('.mobile-nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
+/* ═══════════════════════════════════════════════════════════
+   1. CUSTOM CURSOR
+   ═══════════════════════════════════════════════════════════ */
+function initCursor() {
+  const dot = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+  if (!dot || !ring) return;
 
-  // Sticky header on scroll
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 60);
+  let dotX = 0, dotY = 0, ringX = 0, ringY = 0;
+  let mouseX = 0, mouseY = 0;
+
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.left = mouseX + 'px';
+    dot.style.top = mouseY + 'px';
   }, { passive: true });
 
-  // Mobile hamburger toggle
-  if (toggle && navLinks) {
-    toggle.addEventListener('click', () => {
-      toggle.classList.toggle('active');
-      navLinks.classList.toggle('active');
+  function animateRing() {
+    ringX += (mouseX - ringX) * 0.14;
+    ringY += (mouseY - ringY) * 0.14;
+    ring.style.left = ringX + 'px';
+    ring.style.top = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  // Expand ring on interactive elements
+  const interactives = document.querySelectorAll('a, button, input, textarea, .project-item, .skill-group');
+  interactives.forEach(el => {
+    el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════
+   2. NAV — sticky + mobile drawer
+   ═══════════════════════════════════════════════════════════ */
+function initNav() {
+  const header = document.getElementById('header');
+  const burger = document.getElementById('burger');
+  const drawer = document.getElementById('mobile-drawer');
+  const drawerLinks = document.querySelectorAll('.drawer-link');
+
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  if (burger && drawer) {
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('open');
+      drawer.classList.toggle('open');
+      document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
     });
 
-    // Close when a link is clicked
-    navLinks.querySelectorAll('a').forEach(link => {
+    drawerLinks.forEach(link => {
       link.addEventListener('click', () => {
-        toggle.classList.remove('active');
-        navLinks.classList.remove('active');
+        burger.classList.remove('open');
+        drawer.classList.remove('open');
+        document.body.style.overflow = '';
       });
-    });
-
-    // Close when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!header.contains(e.target)) {
-        toggle.classList.remove('active');
-        navLinks.classList.remove('active');
-      }
     });
   }
 }
 
-/* ============================================================
-   2. TYPING EFFECT — subtitle carousel
-   ============================================================ */
+/* ═══════════════════════════════════════════════════════════
+   3. TYPING EFFECT
+   ═══════════════════════════════════════════════════════════ */
 function initTyping() {
-  const el = document.querySelector('.typing-text');
+  const el = document.getElementById('typed-text');
   if (!el) return;
 
-  const words = JSON.parse(el.getAttribute('data-words') || '[]');
-  if (!words.length) return;
+  const phrases = [
+    'Full-Stack Web Developer',
+    'MERN Stack Specialist',
+    'Automation QA Enthusiast',
+    'Software Engineering Undergraduate',
+  ];
 
-  let wordIdx = 0, charIdx = 0, deleting = false;
+  let phraseIdx = 0, charIdx = 0, deleting = false;
 
   function tick() {
-    const word = words[wordIdx];
+    const phrase = phrases[phraseIdx];
     el.textContent = deleting
-      ? word.slice(0, charIdx - 1)
-      : word.slice(0, charIdx + 1);
+      ? phrase.slice(0, charIdx - 1)
+      : phrase.slice(0, charIdx + 1);
 
     deleting ? charIdx-- : charIdx++;
 
-    let delay = deleting ? 38 : 75;
+    let delay = deleting ? 35 : 70;
 
-    if (!deleting && charIdx > word.length) {
-      delay = 2000;        // Pause at full word
+    if (!deleting && charIdx > phrase.length) {
+      delay = 2000;
       deleting = true;
     } else if (deleting && charIdx < 0) {
       deleting = false;
-      wordIdx = (wordIdx + 1) % words.length;
+      phraseIdx = (phraseIdx + 1) % phrases.length;
       charIdx = 0;
-      delay = 400;         // Pause before next word
+      delay = 380;
     }
 
     setTimeout(tick, delay);
@@ -86,190 +117,90 @@ function initTyping() {
   setTimeout(tick, 800);
 }
 
-/* ============================================================
-   3. SCROLL REVEAL — IntersectionObserver for staggered reveals
-   ============================================================ */
+/* ═══════════════════════════════════════════════════════════
+   4. SCROLL REVEAL — IntersectionObserver
+   ═══════════════════════════════════════════════════════════ */
 function initScrollReveal() {
-  // Add reveal classes programmatically to key elements
-  const selectors = [
-    { query: '.section-header', cls: 'reveal' },
-    { query: '.hero-content', cls: 'reveal' },
-    { query: '.hero-visual', cls: 'reveal delay-2' },
-    { query: '.about-bio', cls: 'reveal' },
-    { query: '.about-info', cls: 'reveal delay-2' },
-    { query: '.skills-category-card', cls: 'reveal' },
-    { query: '.project-card', cls: 'reveal' },
-    { query: '.timeline-item', cls: 'reveal' },
-    { query: '.contact-info', cls: 'reveal' },
-    { query: '.contact-form-wrap', cls: 'reveal delay-2' },
+  // Tag elements
+  const targets = [
+    '.section-label',
+    '.section-h2',
+    '.about-lead',
+    '.about-text',
+    '.about-facts',
+    '.skill-group',
+    '.project-item',
+    '.tl-item',
+    '.contact-left',
+    '.contact-right',
+    '.hero-text',
+    '.hero-image-col',
   ];
 
-  selectors.forEach(({ query, cls }) => {
-    document.querySelectorAll(query).forEach((el, i) => {
-      // Apply delay for grid children (skills, projects, timeline items)
-      const isGrid = ['skills-category-card', 'project-card', 'timeline-item'].some(c => el.classList.contains(c));
-      const delayClass = isGrid ? `delay-${Math.min(i % 4 + 1, 6)}` : '';
-
-      cls.split(' ').forEach(c => el.classList.add(c));
-      if (delayClass) el.classList.add(delayClass);
+  targets.forEach(selector => {
+    document.querySelectorAll(selector).forEach((el, i) => {
+      if (!el.classList.contains('reveal-item')) {
+        el.classList.add('reveal-item');
+      }
+      // Stagger children in grids
+      if (['skill-group', 'project-item', 'tl-item'].some(c => el.classList.contains(c))) {
+        el.style.transitionDelay = `${(i % 4) * 0.08}s`;
+      }
     });
   });
 
-  // Observe and reveal
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-  );
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
-  document.querySelectorAll('.reveal, .reveal-left').forEach(el => observer.observe(el));
+  document.querySelectorAll('.reveal-item').forEach(el => observer.observe(el));
 }
 
-/* ============================================================
-   4. CONTACT FORM — validation + success feedback
-   ============================================================ */
+/* ═══════════════════════════════════════════════════════════
+   5. CONTACT FORM
+   ═══════════════════════════════════════════════════════════ */
 function initContactForm() {
   const form = document.getElementById('contact-form');
-  const alertBox = document.getElementById('form-status');
-  if (!form || !alertBox) return;
+  const status = document.getElementById('form-status');
+  if (!form || !status) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', e => {
     e.preventDefault();
 
-    const name    = document.getElementById('f-name')?.value.trim();
-    const email   = document.getElementById('f-email')?.value.trim();
+    const name = document.getElementById('f-name')?.value.trim();
+    const email = document.getElementById('f-email')?.value.trim();
     const subject = document.getElementById('f-subject')?.value.trim();
     const message = document.getElementById('f-message')?.value.trim();
 
-    // Basic validation
     if (!name || !email || !message) {
-      showAlert('Please fill in all required fields.', 'error');
+      showStatus('Please fill in all required fields.', 'error');
       return;
     }
-    if (!isValidEmail(email)) {
-      showAlert('Please enter a valid email address.', 'error');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showStatus('Please enter a valid email address.', 'error');
       return;
     }
 
-    const btn = form.querySelector('.form-submit-btn');
-    const btnText = btn.querySelector('span');
-    btnText.textContent = 'Sending…';
+    const btn = form.querySelector('.cform-submit');
+    btn.textContent = 'Sending…';
     btn.disabled = true;
 
-    // Simulate async send
     setTimeout(() => {
       form.reset();
-      btnText.textContent = 'Send Message';
+      btn.textContent = 'Send Message';
       btn.disabled = false;
-      showAlert(`Thank you, ${name}! Your message has been received. I'll be in touch shortly.`, 'success');
+      showStatus(`Message sent, ${name}! I'll be in touch soon.`, 'success');
     }, 1400);
   });
 
-  function showAlert(message, type) {
-    alertBox.textContent = message;
-    alertBox.className = `alert-box ${type}`;
-    alertBox.style.display = 'block';
-    setTimeout(() => {
-      alertBox.style.display = 'none';
-    }, 6000);
+  function showStatus(msg, type) {
+    status.textContent = msg;
+    status.className = `form-status ${type}`;
+    setTimeout(() => { status.className = 'form-status'; }, 7000);
   }
-
-  function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  }
-}
-
-/* ============================================================
-   5. PROJECT DETAILS MODAL — Dynamic detail popups
-   ============================================================ */
-function initProjectModal() {
-  const modal = document.getElementById('project-modal');
-  const modalBody = modal?.querySelector('.modal-body');
-  const closeBtn = modal?.querySelector('.modal-close');
-  const detailsBtns = document.querySelectorAll('.project-details-btn');
-
-  if (!modal || !modalBody || !closeBtn) return;
-
-  // Open modal
-  detailsBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const card = btn.closest('.project-card');
-      if (!card) return;
-
-      const imgSrc = card.querySelector('.project-thumbnail img')?.getAttribute('src') || '';
-      const imgAlt = card.querySelector('.project-thumbnail img')?.getAttribute('alt') || 'Project screenshot';
-      const headerHtml = card.querySelector('.project-header')?.innerHTML || '';
-      const titleText = card.querySelector('.project-title')?.textContent || '';
-      const introText = card.querySelector('.project-intro-text')?.textContent || '';
-      const bulletsHtml = card.querySelector('.project-bullets')?.innerHTML || '';
-      const tagsHtml = card.querySelector('.project-tags')?.innerHTML || '';
-      
-      // Select project links (we filter out class/styling to keep modal standard)
-      const linksHtml = card.querySelector('.project-links')?.innerHTML || '';
-
-      // Set content
-      modalBody.innerHTML = `
-        <div class="modal-project-content">
-          <div class="modal-project-img-wrap" style="height: 250px; border-radius: 12px; overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--border);">
-            <img src="${imgSrc}" alt="${imgAlt}" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
-          </div>
-          <div class="project-header" style="margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-            ${headerHtml}
-          </div>
-          <h3 class="project-title" style="margin-bottom: 1rem; color: #fff; font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700;">${titleText}</h3>
-          <p class="project-intro-text" style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.7;">${introText}</p>
-          
-          <h4 style="color: #fff; font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; font-family: var(--font-heading);">Key Features & Contributions</h4>
-          <ul class="project-bullets">
-            ${bulletsHtml}
-          </ul>
-          
-          <div class="project-tags" style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
-            ${tagsHtml}
-          </div>
-          
-          ${linksHtml ? `
-            <div class="project-links" style="margin-top: 1.5rem; padding-top: 1rem;">
-              ${linksHtml}
-            </div>
-          ` : ''}
-        </div>
-      `;
-
-      // Open Modal
-      modal.classList.add('active');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('modal-open');
-    });
-  });
-
-  // Close modal functions
-  function closeModal() {
-    modal.classList.remove('active');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('modal-open');
-  }
-
-  closeBtn.addEventListener('click', closeModal);
-
-  // Close when clicking overlay backdrop
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
-
-  // Close on Escape key press
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      closeModal();
-    }
-  });
 }
